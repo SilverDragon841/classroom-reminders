@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+#reminders {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: inline-block;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
