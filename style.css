@@ -1,13 +1,16 @@
-/* Futuristic Dark Neon Theme */
+/* Futuristic Neon Dashboard */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 :root {
-  --bg-dark: #0a0f1f;
-  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-dark: #050510;
+  --bg-light: #f8f9fa;
+  --card-dark: rgba(255, 255, 255, 0.05);
+  --card-light: rgba(0, 0, 0, 0.05);
   --neon-blue: #00f7ff;
   --neon-purple: #b300ff;
-  --text-light: #e0e0e0;
   --danger: #ff4f4f;
+  --text-dark: #222;
+  --text-light: #e0e0e0;
 }
 
 body {
@@ -15,54 +18,53 @@ body {
   font-family: 'Orbitron', sans-serif;
   background: var(--bg-dark);
   color: var(--text-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
+  position: relative;
   text-align: center;
-  max-width: 800px;
-  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  z-index: 2;
 }
 
 h1 {
   font-size: 2.5rem;
   color: var(--neon-blue);
   text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-purple);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-/* Reminder Cards */
+/* Reminder cards */
 .reminders {
   display: grid;
   gap: 20px;
 }
 
 .card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px;
+  background: var(--card-dark);
   border-radius: 15px;
+  padding: 20px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px var(--neon-blue), 0 0 30px rgba(0, 247, 255, 0.3);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 15px var(--neon-blue), inset 0 0 10px rgba(0,247,255,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 25px var(--neon-purple), inset 0 0 15px rgba(179,0,255,0.4);
 }
 
 .card h2 {
-  margin: 0;
   color: var(--neon-purple);
-  font-size: 1.3rem;
+  margin: 0 0 10px;
 }
 
 .card p {
   margin: 5px 0;
-  font-size: 1rem;
 }
 
 .countdown {
@@ -71,29 +73,75 @@ h1 {
   color: var(--neon-blue);
 }
 
-/* Footer */
+/* Last updated footer */
 .last-updated {
-  margin-top: 30px;
+  margin-top: 25px;
   font-size: 0.9rem;
   opacity: 0.7;
 }
 
-/* Theme Toggle Button */
+/* Toggle button */
 #theme-toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--bg-card);
   border: none;
-  color: var(--neon-blue);
   font-size: 1.5rem;
-  padding: 10px 15px;
+  padding: 12px 16px;
   border-radius: 50%;
+  background: var(--card-dark);
+  color: var(--neon-blue);
   cursor: pointer;
   box-shadow: 0 0 10px var(--neon-blue);
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 #theme-toggle:hover {
-  transform: rotate(20deg);
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* Light mode */
+body.light-mode {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+body.light-mode .card {
+  background: var(--card-light);
+  box-shadow: 0 0 8px var(--neon-purple);
+}
+
+body.light-mode h1 {
+  color: var(--neon-purple);
+  text-shadow: 0 0 8px var(--neon-purple);
+}
+
+/* Animated wires background */
+.wires {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(0,247,255,0.1) 0,
+      rgba(0,247,255,0.1) 2px,
+      transparent 2px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(179,0,255,0.1) 0,
+      rgba(179,0,255,0.1) 2px,
+      transparent 2px,
+      transparent 100px
+    );
+  animation: moveWires 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveWires {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 100px 100px, 100px 100px; }
 }
