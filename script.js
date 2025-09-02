@@ -4,7 +4,7 @@
 // 👇 Just edit this array to update your reminders!
 const reminders = [
   { subject: "Math Homework", date: "2025-09-05", details: "Page 42 Q1–10", icon: "📘" },
-  { subject: "Science Project", date: "2025-09-07", details: "Bring materials", icon: "🔬" },
+  { subject: "Science Project", date: "2025-09-07", details: "Bring reading things idk", icon: "🔬" },
   { subject: "History Quiz", date: "2025-09-10", details: "Chapter 3", icon: "📜" }
 ];
 
