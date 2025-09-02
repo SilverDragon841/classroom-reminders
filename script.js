@@ -1,18 +1,18 @@
 // ====================
 // Reminders Data
 // ====================
-// 👇 Just edit this array to update your reminders!
 const reminders = [
   { subject: "Math Homework", date: "2025-09-05", details: "Page 42 Q1–10", icon: "📘" },
-  { subject: "Science Project", date: "2025-09-07", details: "Bring reading things idk", icon: "🔬" },
-  { subject: "History Quiz", date: "2025-09-10", details: "Chapter 3", icon: "📜" }
+  { subject: "Science Project", date: "2025-09-07", details: "Bring materials for lab", icon: "🔬" },
+  { subject: "History Quiz", date: "2025-09-10", details: "Study Chapter 3", icon: "📜" },
+  { subject: "English Essay", date: "2025-09-15", details: "2 Pages on Shakespeare", icon: "✍️" }
 ];
 
 // ====================
 // Functions
 // ====================
 
-// Calculate countdown days
+// Countdown
 function getCountdown(date) {
   const now = new Date();
   const due = new Date(date);
@@ -39,7 +39,7 @@ function renderReminders() {
   });
 }
 
-// Auto-update footer date
+// Footer auto-update
 document.getElementById("last-updated").textContent =
   "Last updated: " + new Date().toDateString();
 
