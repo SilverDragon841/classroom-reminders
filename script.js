@@ -2,10 +2,10 @@
 // Reminders Data
 // ====================
 const reminders = [
-  { subject: "Math Homework", date: "2025-09-05", details: "Breathe and school ends", icon: "📘" },
-  { subject: "Science Project", date: "2025-09-07", details: "Bring materials for lab", icon: "🔬" },
-  { subject: "History Quiz", date: "2025-09-10", details: "Breathe and school ends", icon: "📜" },
-  { subject: "English Essay", date: "2025-09-15", details: "Breathe and school ends", icon: "✍️" }
+  { subject: "Math Homework", date: "2025-09-05", details: "Breathe and school ends", icon: "🔥" },
+  { subject: "Science Project", date: "2025-09-07", details: "Bring materials for lab", icon: "👀" },
+  { subject: "History Quiz", date: "2025-09-10", details: "Breathe and school ends", icon: "🥀" },
+  { subject: "English Essay", date: "2025-09-15", details: "Breathe and school blah blah blah", icon: "🫠🫠🫠🫠🫠" }
 ];
 
 // ====================
